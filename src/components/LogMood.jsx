@@ -1,6 +1,7 @@
 import "animate.css"; // Import Animate.css
 import { useState } from "react";
 import { FaFrown, FaGrin, FaMeh, FaSadTear, FaSmile } from "react-icons/fa";
+import Swal from "sweetalert2";
 
 const LogMood = () => {
   const [selectedMood, setSelectedMood] = useState("");
@@ -30,6 +31,21 @@ const LogMood = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
+        const Toast = Swal.mixin({
+          toast: true,
+          position: "top-end",
+          showConfirmButton: false,
+          timer: 3000,
+          timerProgressBar: true,
+          didOpen: (toast) => {
+            toast.onmouseenter = Swal.stopTimer;
+            toast.onmouseleave = Swal.resumeTimer;
+          },
+        });
+        Toast.fire({
+          icon: "success",
+          title: "Your Mood Log successfully",
+        });
       });
   };
 
