@@ -1,3 +1,67 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+
+
+
+/* Define the keyframes for the container's border animation */
+@keyframes borderAnimation {
+    0% {
+      border-color: #83b8db;  /* Starting color */
+      transform: scale(1);  /* Normal size */
+    }
+    50% {
+      border-color: #a9665e;  /* Color halfway */
+      transform: scale(1.05);  /* Slightly enlarge */
+    }
+    100% {
+      border-color: #637c8d;  /* Back to the original color */
+      transform: scale(1);  /* Reset to original size */
+    }
+  }
+  
+  /* Apply the animation to the container */
+  .animate-border {
+    border: 3px solid #985d8a;  /* Initial border color */
+    animation: borderAnimation 2s ease-in-out infinite;  /* Animation settings */
+    transition: transform 0.3s ease;  /* Smooth transition for scale */
+  }
+  
+  /* Define the keyframes for the submit button's border animation */
+  @keyframes buttonBorderAnimation {
+    0% {
+      border-color: #3498db;  /* Starting color */
+    }
+    50% {
+      border-color: #e74c3c;  /* Color halfway */
+    }
+    100% {
+      border-color: #3498db;  /* Back to the original color */
+    }
+  }
+  
+  /* Apply the infinite animation to the submit button */
+  .animate-border-submit {
+    border: 2px solid #3498db;  /* Initial border color */
+    animation: buttonBorderAnimation 1.5s ease-in-out infinite;  /* Animation settings */
+  }
+  
+  /* Define the keyframes for the live animation effect on header */
+  @keyframes liveAnimation {
+    0% {
+      color: #3498db;  /* Initial color */
+    }
+    50% {
+      color: #e74c3c;  /* Color halfway */
+    }
+    100% {
+      color: #3498db;  /* Back to original color */
+    }
+  }
+  
+  .live-header-animation {
+    animation: liveAnimation 3s ease-in-out infinite;  /* Animation for header */
+  }
+  
